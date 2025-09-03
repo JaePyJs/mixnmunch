@@ -5,6 +5,14 @@ import androidx.room.Room
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.jmbar.mixandmunch.data.local.MixAndMunchDatabase
 import com.jmbar.mixandmunch.data.remote.api.TheMealDbApi
+import com.jmbar.mixandmunch.data.remote.themealdb.TheMealDbService
+import com.jmbar.mixandmunch.data.repository.RecipeRepositoryImpl
+import com.jmbar.mixandmunch.data.repository.TheMealDbRepository
+import com.jmbar.mixandmunch.domain.repository.RecipeRepository
+import com.jmbar.mixandmunch.domain.usecase.SearchRecipesUseCase
+import com.jmbar.mixandmunch.utils.IngredientNormalizer
+import com.jmbar.mixandmunch.utils.RecipeRanker
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -62,6 +70,12 @@ object NetworkModule {
     fun provideTheMealDbApi(retrofit: Retrofit): TheMealDbApi {
         return retrofit.create(TheMealDbApi::class.java)
     }
+    
+    @Provides
+    @Singleton
+    fun provideTheMealDbService(retrofit: Retrofit): TheMealDbService {
+        return retrofit.create(TheMealDbService::class.java)
+    }
 }
 
 @Module
@@ -86,4 +100,28 @@ object DatabaseModule {
     
     @Provides
     fun provideSavedRecipeDao(database: MixAndMunchDatabase) = database.savedRecipeDao()
+}
+
+@Module
+@InstallIn(SingletonComponent::class)
+object UtilsModule {
+    
+    @Provides
+    @Singleton
+    fun provideIngredientNormalizer(): IngredientNormalizer = IngredientNormalizer
+    
+    @Provides
+    @Singleton
+    fun provideRecipeRanker(): RecipeRanker = RecipeRanker()
+}
+
+@Module
+@InstallIn(SingletonComponent::class)
+abstract class RepositoryModule {
+    
+    @Binds
+    @Singleton
+    abstract fun bindRecipeRepository(
+        recipeRepositoryImpl: RecipeRepositoryImpl
+    ): RecipeRepository
 }
