@@ -116,6 +116,7 @@ lint/tmp/
 .vscode/
 .fleet/
 .qoder/
+.kilocode/
 
 # OS generated files
 .DS_Store
