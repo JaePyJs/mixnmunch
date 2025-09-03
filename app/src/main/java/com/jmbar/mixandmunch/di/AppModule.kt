@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.jmbar.mixandmunch.data.local.MixAndMunchDatabase
 import com.jmbar.mixandmunch.data.remote.api.TheMealDbApi
+import com.jmbar.mixandmunch.data.remote.themealdb.TheMealDbService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -61,6 +62,12 @@ object NetworkModule {
     @Singleton
     fun provideTheMealDbApi(retrofit: Retrofit): TheMealDbApi {
         return retrofit.create(TheMealDbApi::class.java)
+    }
+    
+    @Provides
+    @Singleton
+    fun provideTheMealDbService(retrofit: Retrofit): TheMealDbService {
+        return retrofit.create(TheMealDbService::class.java)
     }
 }
 

@@ -15,7 +15,7 @@ interface TheMealDbService {
      * GET filter.php?i={ingredient}
      * Returns minimal meals (idMeal, strMeal, strMealThumb) or {"meals": null} if none
      */
-    @GET("filter.php")
+    @GET("api/json/v1/1/filter.php")
     suspend fun filterByIngredient(@Query("i") ingredient: String): FilterResponse
     
     /**
@@ -23,6 +23,6 @@ interface TheMealDbService {
      * GET lookup.php?i={id}
      * Returns full meal details
      */
-    @GET("lookup.php")
+    @GET("api/json/v1/1/lookup.php")
     suspend fun lookupById(@Query("i") id: String): LookupResponse
 }
