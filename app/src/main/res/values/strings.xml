@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Mix &amp; Munch</string>
+    
+    <!-- Home Screen -->
+    <string name="home_title">What can you cook today?</string>
+    <string name="ingredient_input_hint">Enter ingredients (Filipino names okay!)</string>
+    <string name="ingredient_input_label">Ingredients</string>
+    <string name="up_to_6_ingredients">Up to 6 ingredients</string>
+    <string name="search_recipes">Search Recipes</string>
+    <string name="clear_ingredients">Clear</string>
+    <string name="example_ingredients">Try: sibuyas, kamatis, egg</string>
+    
+    <!-- Results Screen -->
+    <string name="results_title">Recipe Ideas</string>
+    <string name="badge_sourced">Sourced</string>
+    <string name="badge_ai_generated">AI-generated</string>
+    <string name="badge_filipino">Filipino</string>
+    <string name="badge_exact_match">Exact</string>
+    <string name="badge_partial_match">Partial</string>
+    <string name="why_this_recipe">Why this?</string>
+    <string name="missing_ingredients">Missing: %1$s</string>
+    <string name="matched_ingredients">Matched: %1$s</string>
+    
+    <!-- Details Screen -->
+    <string name="recipe_details">Recipe Details</string>
+    <string name="ingredients_title">Ingredients</string>
+    <string name="instructions_title">Instructions</string>
+    <string name="save_recipe">Save Recipe</string>
+    <string name="unsave_recipe">Remove from Saved</string>
+    <string name="source_themealdb">Source: TheMealDB</string>
+    <string name="ai_generated_disclaimer">AI-generated recipe. Please verify allergens and cooking instructions.</string>
+    <string name="no_instructions_available">Instructions not available from source.</string>
+    
+    <!-- Saved Screen -->
+    <string name="saved_recipes_title">Saved Recipes</string>
+    <string name="no_saved_recipes">No saved recipes yet. Save recipes from search results to access them offline!</string>
+    
+    <!-- About/Privacy Screen -->
+    <string name="about_privacy_title">About &amp; Privacy</string>
+    <string name="about_text">Mix &amp; Munch helps you discover Filipino recipes using ingredients you have. We use TheMealDB for sourced recipes and optional AI for creative suggestions.</string>
+    <string name="privacy_text">We don\'t collect personal information. Your saved recipes stay on your device. External links follow their respective terms of service.</string>
+    <string name="safety_disclaimer">Safety Notice: Please verify allergens, cooking temperatures, and food safety. Cook chicken to 74°C, pork to 63°C, ground meat to 71°C, eggs until set.</string>
+    <string name="attribution_themealdb">Recipe data courtesy of TheMealDB</string>
+    
+    <!-- Error States -->
+    <string name="error_network">Network error. Please check your connection and try again.</string>
+    <string name="error_no_results">No recipes found. Try removing one ingredient.</string>
+    <string name="error_general">Something went wrong. Please try again.</string>
+    <string name="retry">Retry</string>
+    <string name="remove_ingredient_suggestion">Try removing "%1$s"</string>
+    
+    <!-- AI Integration -->
+    <string name="ai_offline_banner">AI suggestions unavailable</string>
+    <string name="ai_toggle_title">AI Suggestions</string>
+    <string name="ai_toggle_description">Include AI-generated recipe ideas</string>
+    
+    <!-- Loading -->
+    <string name="loading">Loading recipes...</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_saved">Saved</string>
+    <string name="nav_about">About</string>
+    
+    <!-- Content Descriptions for Accessibility -->
+    <string name="cd_recipe_image">Recipe image</string>
+    <string name="cd_ingredient_chip">Ingredient chip</string>
+    <string name="cd_remove_ingredient">Remove ingredient</string>
+    <string name="cd_back_button">Go back</string>
+    <string name="cd_save_button">Save recipe</string>
+</resources>
